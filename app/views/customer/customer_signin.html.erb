@@ -1,0 +1,40 @@
+<header color='red'>
+	<i class="fa fa-bars" aria-hidden="true" ></i>
+	<div class="logo">
+		FixIt!
+	</div>
+	Hello, <%= current_customer.email %>
+</header>
+
+<body>
+
+	<%= form_tag("/search", method: "get") do %>
+	  <%= label_tag(:q, "Service Type : ") %>
+	  <%= text_field_tag(:q) %>
+	  <%= label_tag(:q, "Time Slot : ") %>
+	  <%= text_field_tag(:q) %>
+	  <%= label_tag(:q, "Description : ") %>
+	  <%= text_area_tag(:q) %>
+	  <%= submit_tag("Book Now") %>
+	<% end %>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to "Log Out", controller: "customer", action: "customer_signout" %>

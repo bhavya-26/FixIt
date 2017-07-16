@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170716074941) do
+ActiveRecord::Schema.define(version: 20170716122805) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +40,31 @@ ActiveRecord::Schema.define(version: 20170716074941) do
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+
+  create_table "service_men", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "address"
+    t.integer  "ph_no"
+    t.string   "gender"
+    t.integer  "age"
+    t.integer  "service_type"
+    t.integer  "rating"
+  end
+
+  add_index "service_men", ["email"], name: "index_service_men_on_email", unique: true
+  add_index "service_men", ["reset_password_token"], name: "index_service_men_on_reset_password_token", unique: true
 
   create_table "views", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

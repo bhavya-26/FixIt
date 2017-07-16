@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :service_men
   devise_for :customers
   devise_for :views
 
@@ -7,6 +8,10 @@ Rails.application.routes.draw do
   get 'customer/customer_signin'
 
   get 'customer/customer_signout'
+
+  get 'service_men/service_man_signin'
+
+  get 'service_men/service_man_signout'
   
   root to: "home#index"
 

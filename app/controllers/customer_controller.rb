@@ -5,7 +5,7 @@ class CustomerController < ApplicationController
   end
   
   def customer_signout
-  	session[:customer_id] = nil
+  	session[:customer_email] = nil
   	return redirect_to '/'
   end
 end

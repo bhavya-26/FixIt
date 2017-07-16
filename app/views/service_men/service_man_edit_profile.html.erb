@@ -1,0 +1,6 @@
+<%= form_for @service_man do |f| %>
+   <%= f.password_field :address %>
+   <%= f.number_field :ph_no %>
+   <%= f.text_field :email %>
+   <% f.submit %>  # this will submit to profile#update
+<% end %>
